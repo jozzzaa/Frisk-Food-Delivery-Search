@@ -4,5 +4,14 @@ Rails.application.routes.draw do
   resources :food_tags
   resources :tags
   resources :suburbs
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  namespace :api do
+    resources :foods
+  end
+
+  get '/', to: 'application#index'
+
+  post '/api/results', to: 'api/foods#present'
+
+
 end

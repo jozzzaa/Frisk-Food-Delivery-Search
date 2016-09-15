@@ -1,0 +1,55 @@
+
+
+<div class="page">
+
+  <!-- PUT SCROLLING FOOD BACKGROUND TAKEN FROM FOOD DELIVERY INSTAGRAMS -->
+
+  <div class="holder">
+
+    <div class="logo-holder">
+      <img src="/images/logo/Google_2015_logo.svg.png" alt="">
+    </div>
+
+    <div class="search">
+      <form action="/foods" method="get">
+        <input type="text" name="search" placeholder="Search for Food Business" id="food">
+        <input type="text" name="location" placeholder="Postcode e.g. Melbourne" id="location">
+        <button>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      </form>
+    </div>
+
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos nobis repellat rerum, sit deleniti obcaecati dolore atque, dolorum cumque vitae suscipit tenetur itaque sed saepe ipsam, perspiciatis mollitia consectetur.</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- <form action="/users" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <label for="first_name">First Name</label>
+  <input name="first_name" type="text">
+
+  <label for="last_name">Last Name</label>
+  <input name="last_name" type="text">
+
+  <label for="user_name">Username</label>
+  <input name="user_name" type="text">
+
+  <label for="email">Email</label>
+  <input name="email" type="text">
+
+  <label for="password">Password</label>
+  <input name="password" type="password">
+
+  <button class="form-btn blue-btn">Add User</button>
+</form>
+
+</div> -->
