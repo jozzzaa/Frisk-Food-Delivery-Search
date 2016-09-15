@@ -70,14 +70,14 @@ class Scrapper
 
         @tag = Tag.new
         @tag.tag = tagEntry
+        @tag.save
 
         @food_tags = FoodTag.new
         @food_tags.food_id = @food.id
         @food_tags.tag_id = @tag.id
+        @food_tags.save
 
       end
-
-
 
     end
 

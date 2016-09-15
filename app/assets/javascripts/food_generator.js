@@ -1,4 +1,6 @@
 
+var hey = ''
+
 function ajaxCall(search, location) {
 
   $.ajax({
@@ -12,6 +14,8 @@ function ajaxCall(search, location) {
 
   }).done(function(response) {
 
+    console.log(response);
+    hey = response
     foodGenerator(response)
 
   })
@@ -33,17 +37,19 @@ function foodGenerator(object) {
     var foodContentHolder = $('<div>').addClass('food-content')
 
     var foodName = $('<h3>').text(foods[i].name)
-    var foodImage = $('<img>').attr('src', foods[i].image_url);
+    var foodImage = $('<img>').attr('src', foods[i].image);
     var addressCompile = foods[i].address_street + ' ' + foods[i].address_suburb
     var foodAddress = $('<p>').text(addressCompile)
     var foodProvider = $('<p>').text(foods[i].provider)
-    var tags = "nil"
+    var tags = $('<p>').text(foods[i].tags)
 
     var imageCompile = foodImageHolder.append(foodImage)
     var contentCompile = foodContentHolder
                             .append(foodName)
                             .append(foodAddress)
                             .append(foodProvider)
+                            .append(tags)
+
 
     var finalCompilation = foodHolder
                             .append(imageCompile)
