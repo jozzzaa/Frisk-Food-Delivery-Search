@@ -4,7 +4,8 @@ module Api
 
     def present
 
-      food_search = Food.where(name: params[:search])
+      search_input = params[:search]
+      food_search = Food.where("name ilike ? ", "%#{search_input}%")
 
       json = []
 
@@ -24,7 +25,7 @@ module Api
       end
 
       render json: json
-      
+
     end
 
   end

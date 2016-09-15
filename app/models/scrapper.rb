@@ -58,24 +58,32 @@ class Scrapper
       # puts 'delivery_provider: ' + delivery_provider
       # puts '##########'
 
-      @food = Food.new
-      @food.name = title
-      @food.image_url = image
-      @food.address_street = address_street
-      @food.address_suburb = address_suburb
-      @food.provider = delivery_provider
-      @food.save
 
-      tag_holder.each do |tagEntry|
 
-        @tag = Tag.new
-        @tag.tag = tagEntry
-        @tag.save
+      db_title_check = Food.find_by(name: title)
 
-        @food_tags = FoodTag.new
-        @food_tags.food_id = @food.id
-        @food_tags.tag_id = @tag.id
-        @food_tags.save
+      if !db_title_check
+
+        @food = Food.new
+        @food.name = title
+        @food.image_url = image
+        @food.address_street = address_street
+        @food.address_suburb = address_suburb
+        @food.provider = delivery_provider
+        @food.save
+
+        tag_holder.each do |tagEntry|
+
+          @tag = Tag.new
+          @tag.tag = tagEntry
+          @tag.save
+
+          @food_tags = FoodTag.new
+          @food_tags.food_id = @food.id
+          @food_tags.tag_id = @tag.id
+          @food_tags.save
+
+        end
 
       end
 
