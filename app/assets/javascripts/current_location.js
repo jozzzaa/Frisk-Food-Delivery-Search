@@ -28,7 +28,7 @@ function getLocation() {
       var fullAddress = street + ', ' + suburbName + ', ' + city + ' ' + postcode;
       var suburb = suburbName + ' - ' + postcode;
 
-      $('#location').val(suburb);
+      $('#location-search').val(fullAddress);
 
     });
 

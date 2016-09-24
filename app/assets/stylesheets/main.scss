@@ -1,3 +1,16 @@
+
+
+////////////////////////// GLOBAL STYLES //////////////////////////
+
+$primary-font: 'Hind', sans-serif;
+$secondary-font: 'Lato', sans-serif;
+
+// $nav-accent: #770055;
+$nav-accent: #EDB431;
+$nav-accent: #5048ED;
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -12,62 +25,276 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #F7F7F7;
+  background-color: #f2f2f2;
 }
+
+h1, h2, h3, h4, h5, button  {
+  font-family: 'Hind', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+p, button, input {
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+
+::-webkit-input-placeholder {
+  color: rgb(175, 175, 175);
+  font-weight: 300;
+}
+
+:-moz-placeholder {
+  color: rgb(175, 175, 175);
+  font-weight: 300;
+}
+
+::-moz-placeholder {
+  color: rgb(175, 175, 175);
+  font-weight: 300;
+}
+
+:-ms-input-placeholder {
+  color: rgb(175, 175, 175);
+  font-weight: 300;
+}
+
+input:focus {outline:none;}
+
+
+////////////////////////// NAVIGATION BAR //////////////////////////
+
+nav {
+  // background-color: #2f3a4a;
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 70px;
+  // padding: 5px;
+  // padding: 10px;
+  border-bottom: 1px solid #bebebe;
+
+
+  .nav-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    height: 100%;
+
+    .navigation-left {
+      width: 70%;
+
+      .logo-holder {
+        height: 100%;
+        width: 150px;
+        display: inline-block;
+        padding: 5px 0px 5px 0px;
+        text-align: center;
+        margin-right: 20px;
+        margin-left: 20px;
+        cursor: pointer;
+      }
+
+      img {
+        width: 90%;
+        margin-top: 5px;
+      }
+
+      .nav-search {
+        display: inline-block;
+        height: 100%;
+        vertical-align: top;
+        border-top: 0px;
+        border-bottom: 0px;
+        border-left: 1px solid #dbdbdb;
+        border-right: 1px solid #dbdbdb;
+        width: 400px;
+      }
+
+      i {
+        display: inline-block;
+        color: rgb(175, 175, 175);
+        padding: 0px 0px 0px 20px;
+      }
+
+      input {
+        height: 100%;
+        width: 90%;
+        border: 0;
+        padding-left: 5px;
+        display: inline-block;
+        font-weight: 500;
+      }
+
+    }
+
+    .navigation-right {
+      width: 50%;
+
+      .address {
+        height: 100%;
+        // width: 50%;
+        padding: 10px 15px 10px 15px;
+        display: inline-block;
+        float: right;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover .address-bottom {
+          opacity: 0.7;
+        }
+      }
+
+      .address-top {
+        height: 50%;
+        // width: 100%;
+        color: rgb(175, 175, 175);
+        vertical-align: center;
+        padding-top: 5px;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+        color: $nav-accent;
+        font-weight: 500;
+      }
+
+      .address-bottom {
+        height: 50%;
+
+        * {
+          display: inline-block;
+        }
+
+        i {
+          line-height: 1em;
+          vertical-align: top;
+          padding-bottom: 3px;
+          color: rgb(175, 175, 175);
+          padding-left: 3px;
+        }
+      }
+
+      .account {
+        height: 100%;
+        // width: 25%;
+        padding: 10px 15px 10px 15px;
+        display: inline-block;
+        float: right;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover .account-bottom {
+          opacity: 0.7;
+        }
+      }
+
+      .account-top {
+        height: 50%;
+        color: rgb(175, 175, 175);
+        vertical-align: center;
+        padding-top: 5px;
+      }
+
+      .account-bottom {
+        height: 50%;
+
+      }
+
+      .support {
+        height: 100%;
+        // width: 25%;
+        padding: 10px 15px 10px 15px;
+        display: inline-block;
+        float: right;
+      }
+
+      .support-cta {
+        height: 100%;
+        background-color: $nav-accent;
+        color: white;
+        border: 0;
+        border-radius: 5px;
+        padding: 0px 15px 0px 15px;
+        font-weight: 500;
+        font-size: 0.8em;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: rgba($nav-accent, 0.8);
+
+        }
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////// INDEX PAGE //////////////////////////
 
 .page {
-  height: 100vh;
-  width: 100vw;
-  border: 2px solid purple;
-  background-color: mistyrose;
+  max-width: 1200px;
+  margin: 70px auto 0 auto;
+  background-color: grey;
+}
+
+.results {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  flex-wrap: wrap;
 
-.holder {
-  background-color: #F7F7F7;
-  width: 850px;
-  margin: -150px auto 0px auto;
-  padding: 80px;
-}
-
-.logo-holder {
-  width: 60%;
-  height: 150px;
-  margin: 0 auto;
-
-  img {
-    width: 100%;
+  .food {
+    width: 33%;
   }
-
-}
-
-.search {
-
-  form {
-    width: 100%;
-    background-color: black;
-
-    input {
-      height: 50px;
-      padding-left: 20px;
-    }
-
-    #food {
-      width: 60%;
-    }
-
-    #location {
-      width: 30%;
-    }
-
-    button {
-      width: 8%;
-      height: 50px;
-
-    }
-
-  }
-
 }

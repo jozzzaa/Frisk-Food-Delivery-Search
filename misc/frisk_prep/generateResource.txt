@@ -1,0 +1,30 @@
+
+
+
+rails generate resource food name:string image_url:text address_street:text address_suburb:text provider:string
+
+rails generate resource suburb suburb:string postcode:integer
+
+rails generate resource tag tag:string
+
+
+
+
+1. Restaurant Information
+2. Suburbs / Postcodes
+3. Tags
+
+
+
+food
+
+
+
+tags         suburb
+
+
+
+search
+
+Stage 1 - Suburb  or exact location
+Stage 2 - Place, Food Type(Tag)

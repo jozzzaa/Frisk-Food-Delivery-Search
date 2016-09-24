@@ -4,12 +4,12 @@ class ApplicationController < ActionController::Base
 
   def index
     # call scrape function here
-    Scrapper.eatnow
+    # Scrapper.eatnow
     render "/index.html.erb"
   end
 
   def scrape
-    Scrapper.eatnow
+    # Scrapper.eatnow
   end
 
 end

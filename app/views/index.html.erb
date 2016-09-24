@@ -1,36 +1,34 @@
 
 
-<div class="page">
+<nav>
 
-  <!-- PUT SCROLLING FOOD BACKGROUND TAKEN FROM FOOD DELIVERY INSTAGRAMS -->
+  <div class="nav-wrapper">
 
-  <div class="holder">
+    <div class="navigation-left">
 
-    <div class="logo-holder">
-      <img src="/images/logo/Google_2015_logo.svg.png" alt="">
+      <div class="logo-holder">
+        <img src="/images/logo/Acme Logos2.png" alt="" />
+      </div>
+
     </div>
 
-    <div class="search">
-      <form action="/foods" method="get">
-        <input type="text" name="search" placeholder="Search for Food Business" id="food">
-        <input type="text" name="location" placeholder="Postcode e.g. Melbourne" id="location">
-        <button>
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      </form>
-    </div>
+    <div class="navigation-right">
 
-    <div class="content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos nobis repellat rerum, sit deleniti obcaecati dolore atque, dolorum cumque vitae suscipit tenetur itaque sed saepe ipsam, perspiciatis mollitia consectetur.</p>
+      <div class="support">
+        <button type="button" name="support-cta" class="support-cta">SHARE FRISK</button>
+      </div>
+
+      <div class="account">
+        <div class="account-top">
+          <h5>ACCOUNT</h5>
+        </div>
+        <div class="account-bottom">
+          <p>Login</p>
+        </div>
+      </div>
+
     </div>
 
   </div>
 
-</div>
-
-<script>
-
-  getLocation()
-
-</script>
+</nav>
