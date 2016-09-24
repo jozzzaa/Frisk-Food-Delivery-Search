@@ -6,13 +6,14 @@
 
     <div class="navigation-left">
 
-      <div class="logo-holder">
-        <img src="/images/logo/Acme Logos2.png" alt="" />
-      </div>
+      <a href="/">
+        <div class="logo-holder">
+          <img src="/images/logo/frisk-logo.jpg" alt="" />
+        </div></a>
 
       <div class="nav-search">
         <i class="fa fa-search" aria-hidden="true"></i>
-        <input type="text" name="nav-search" placeholder="e.g. Grill'D, TGI Fridays, Pizza, Thai">
+        <input type="text" name="nav-search" placeholder="e.g. Grill'D, TGI Fridays, Pizza, Thai" value="<%= params[:search] %>">
       </div>
 
     </div>
@@ -51,11 +52,7 @@
 <div class="page">
 
   <div class="banner">
-    <img src="" alt="" />
-  </div>
-
-  <div class="tag-filter">
-
+    <img src="/images/banners/Screen Shot 2016-09-24 at 6.44.52 PM.png" alt="" />
   </div>
 
   <div class=" results primary-result">

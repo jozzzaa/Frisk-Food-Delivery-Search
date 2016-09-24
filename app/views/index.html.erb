@@ -6,9 +6,11 @@
 
     <div class="navigation-left">
 
-      <div class="logo-holder">
-        <img src="/images/logo/Acme Logos2.png" alt="" />
-      </div>
+      <a href="/">
+        <div class="logo-holder">
+          <img src="/images/logo/frisk-logo.jpg" alt="" />
+        </div>
+      </a>
 
     </div>
 
@@ -32,3 +34,55 @@
   </div>
 
 </nav>
+
+<div class="hero">
+
+  <div class="hero-content">
+
+    <!-- <h1>Stay in. Dine out.</h1> -->
+    <h1 id="typed-auto"> </h1>
+    <h2>Meal delivery curated in one location. Fast & Simple.</h2>
+
+    <div class="search-container">
+
+      <div class="food-search">
+        <p>FOOD SEARCH</p>
+        <div class="search-input-holder">
+          <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+          <input type="text" name="search-input" value="" placeholder="What are you looking for? e.g. Grill'D, Pizza, Thai" >
+        </div>
+      </div>
+
+      <div class="address-search">
+        <p>DELIVERY ADDRESS</p>
+        <div class="search-input-holder">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <input type="text" name="address-input" value="" placeholder="Where would you like delivery?" id="location-input">
+          <i class="fa fa-location-arrow" aria-hidden="true" id="current-location-btn"></i>
+          <div class="location-info">
+            <p>Use your current location</p>
+            <div class="triangle">
+              <img src="/images/icons/triangle.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="button-holder">
+      <button type="button" name="button" class="unclicked" id="main-search-btn">Search</button>
+    </div>
+
+    <!-- <div class="logo-display">
+      <h4>We curate all our infomration from the following sources and more</h4>
+      <p>Add Slick Here</p>
+    </div> -->
+
+  </div>
+
+</div>
+
+<script src="/javascript/typed.js"></script>
+<script src="/javascript/search.js"></script>

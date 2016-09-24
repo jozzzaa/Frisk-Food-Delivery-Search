@@ -1,5 +1,4 @@
 
-var hey = ''
 
 function ajaxCall(search, location) {
 
@@ -14,21 +13,19 @@ function ajaxCall(search, location) {
 
   }).done(function(response) {
 
-    console.log(response);
-    hey = response
     foodGenerator(response)
 
   })
 
 }
 
-// Windw.location.pathname
 // Store in temp array then appeend to active/results when shown
 
 
 function foodGenerator(object) {
 
-  var foods = object
+  var foods = object;
+  var active = [];
 
   for (var i = 0; i < foods.length; i++) {
 

@@ -28,7 +28,13 @@ function getLocation() {
       var fullAddress = street + ', ' + suburbName + ', ' + city + ' ' + postcode;
       var suburb = suburbName + ' - ' + postcode;
 
-      $('#location-search').val(fullAddress);
+      $('#location-input').val(fullAddress);
+
+      setTimeout(
+        function(){
+          stageTwoSearch();
+        }, 2000);
+
 
     });
 
@@ -36,4 +42,27 @@ function getLocation() {
 
   navigator.geolocation.getCurrentPosition(success);
 
+}
+
+function stageTwoSearch() {
+  var addressBox = $('.address-search');
+  var foodBox = $('.food-search');
+
+  addressBox.css({
+    'transition': '1.5s',
+    'transform': 'translateY(-40px)',
+    'opacity': '0',
+  });
+
+  foodBox
+      .delay(800)
+      .queue(function (next) {
+        $(this).css({
+          'transition': '2s',
+          'transform': 'translateY(-30px)',
+          'opacity': '1',
+          'z-index': '10'
+        });
+        next();
+      });
 }

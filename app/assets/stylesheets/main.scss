@@ -6,7 +6,7 @@ $primary-font: 'Hind', sans-serif;
 $secondary-font: 'Lato', sans-serif;
 
 // $nav-accent: #770055;
-$nav-accent: #EDB431;
+// $nav-accent: #EDB431;
 $nav-accent: #5048ED;
 
 
@@ -103,8 +103,8 @@ nav {
       }
 
       img {
-        width: 90%;
-        margin-top: 5px;
+        width: 70%;
+        margin-top: 10px;
       }
 
       .nav-search {
@@ -131,6 +131,7 @@ nav {
         padding-left: 5px;
         display: inline-block;
         font-weight: 500;
+        font-size: 0.9em;
       }
 
     }
@@ -218,7 +219,7 @@ nav {
       }
 
       .support-cta {
-        height: 100%;
+        height: 85%;
         background-color: $nav-accent;
         color: white;
         border: 0;
@@ -228,6 +229,8 @@ nav {
         font-size: 0.8em;
         cursor: pointer;
         transition: 0.3s;
+        margin: 4px 20px 0px 0px;
+
 
         &:hover {
           background-color: rgba($nav-accent, 0.8);
@@ -235,6 +238,183 @@ nav {
         }
       }
 
+    }
+
+  }
+
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FCEDC6;
+
+  .hero-content {
+    text-align: center;
+
+    h1 {
+      color: $nav-accent;
+      font-weight: 700;
+      font-size: 3.5em;
+      display: inline;
+    }
+
+    h2 {
+      color: #ee9513;
+      margin-top: -15px;
+    }
+
+  }
+
+  .search-container {
+    width: 80%;
+    height: 75px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+
+    p {
+      font-size: 0.7em;
+      color: rgba(#949494, 1);
+    }
+
+    .search-input-holder {
+      width: 100%;
+      border: 1px solid $nav-accent;
+      border-radius: 4px;
+      background-color: white;
+      height: 50px;
+    }
+
+    input {
+      width: 90%;
+      height: 100%;
+      border: 0px;
+      background-color: transparent;
+      padding-left: 10px;
+      font-size: 0.9em;
+      text-transform: uppercase;
+    }
+
+    ::-webkit-input-placeholder {
+        text-transform: none;
+    }
+    :-moz-placeholder {
+        text-transform: none;
+    }
+    ::-moz-placeholder {
+        text-transform: none;
+    }
+    :-ms-input-placeholder {
+        text-transform: none;
+    }
+
+    #location-input {
+      width: 80%;
+    }
+
+    i {
+      margin-left: 20px;
+    }
+
+    #current-location-btn {
+      float: right;
+      color: rgb(175, 175, 175);
+      line-height: 50px;
+      margin-right: 20px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        color: rgb(97, 97, 97);
+      }
+
+    }
+
+    .location-info {
+      background-color: black;
+      position: absolute;
+      top: 0px;
+      right: -50px;
+      padding: 0px 15px 0px 15px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: 1s;
+      cursor: default;
+
+
+      p {
+        color: white !important;
+      }
+
+      .triangle {
+        width: 100%;
+        position: relative;
+
+        img {
+          position: absolute;
+          height: 20px;
+          bottom: -13px;
+          left: calc(50% - 10px);
+        }
+      }
+
+    }
+
+
+    .address-search {
+      // display: none;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      z-index: 1;
+
+    }
+
+    .food-search {
+      // display: none;
+      position: absolute;
+      top: 30px;
+      left: 0px;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(30px);
+      z-index: -1;
+
+    }
+
+  }
+
+  .button-holder {
+    width: 35%;
+    margin: 0 auto;
+    cursor: pointer;
+    z-index: 100;
+
+    button {
+      color: white;
+      background-color: $nav-accent;
+      border: 0px;
+      width: 100%;
+      border-radius: 4px;
+      height: 40px;
+      margin-top: 20px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: rgba($nav-accent, 0.8);
+      }
+
+      &:focus {
+        outline: none;
+      }
     }
 
   }
@@ -281,13 +461,13 @@ nav {
 
 
 
-
 ////////////////////////// INDEX PAGE //////////////////////////
 
 .page {
   max-width: 1200px;
-  margin: 70px auto 0 auto;
-  background-color: grey;
+  margin: 100px auto 70px auto;
+  background-color: white;
+  min-height: 100vh;
 }
 
 .results {
@@ -297,4 +477,35 @@ nav {
   .food {
     width: 33%;
   }
+}
+
+
+
+////////////////////////// TYPED CURSOR //////////////////////////
+
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 1.2s infinite;
+    -moz-animation: blink 1.2s infinite;
+    animation: blink 1.2s infinite;
+    color: rgba($nav-accent, 1);
+    // color: grey;
+    font-weight: 700;
+    font-size: 3.5em;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }
