@@ -8,10 +8,69 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700|Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX98j2ahXOgcR13Cb2Pos1UQtVRBCzv7U&libraries=places">
+    </script>
+
 
   </head>
 
   <body>
+
     <%= yield %>
+
+    <footer>
+
+    </footer>
+
+    <div class="share-window">
+
+      <div class="share-content">
+
+        <img src="http://vignette4.wikia.nocookie.net/fanfiction/images/c/c1/Unlikely_Alliance.png/revision/latest?cb=20121013040551" alt="" />
+
+        <h1>We need your help!</h1>
+        <p>This tool was created out of one persons need. But, we need you to let us know if Frisk should remain. Frisk is an amazing tool to help you find the best places that are delivered, and is the ultimate curated source. By sharing with your friends, you'll be giving us a thumbs up.</p>
+
+        <div class="fb-like" data-href="https://www.facebook.com/StGeorgesBakehouse/?ref=bookmarks" data-width="200" data-layout="button_count" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
+
+        <div class="esc-btn">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="/javascript/search.js"></script>
+
+    <script>
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1776911149246256',
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+
+    <script>
+
+      $('.share-window').hide()
+      
+    </script>
+
+
+
   </body>
+
 </html>

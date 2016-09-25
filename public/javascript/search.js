@@ -39,6 +39,7 @@ function searchManipulation() {
   var searchButton = $('#main-search-btn');
   var addressInput = $('.address-search input').val();
   var searchInput = $('.food-search input').val();
+  var navSearch = $('.nav-search input').val();
 
 
   if( searchButton.hasClass('unclicked') && addressInput.length >= 8 ) {
@@ -61,6 +62,60 @@ function searchManipulation() {
 
 
 
+  } else if ( navSearch.length >= 3 ) {
+
+    searchValue = navSearch;
+    locationValue = $('.address-bottom p').text()
+    window.location = "/foods?search=" + searchValue + "&location=" + locationValue;
+
+
   }
 
 }
+
+
+// Share CTA Handlers
+
+$('.support button').on('click', function() {
+
+  $('.share-window').fadeIn('700');
+
+});
+
+$('.esc-btn').on('click', function() {
+
+  $('.share-window').fadeOut('700');
+
+});
+
+// Address Change Handlers
+
+$('.address-esc i').on('click', function() {
+
+  $('.address-popup').css('display', 'none');
+
+});
+
+$('.address-update-btn').on('click', function() {
+
+  var newAddress = $('.address-change-input input').val()
+  displayLocationNav(newAddress);
+  $('.results').empty();
+  ajaxCall('<%= params[:search] %>', newAddress)
+
+
+});
+
+
+// Address Suggestions
+
+var indexAddress = $('#location-input')[0];
+var navAddress = $('#address-input')[0];
+
+function locationSuggestions(inputElem) {
+  var input = inputElem;
+  var autocomplete = new google.maps.places.Autocomplete(input);
+}
+
+google.maps.event.addDomListener( window, 'load', locationSuggestions(indexAddress) );
+google.maps.event.addDomListener( window, 'load', locationSuggestions(navAddress) );

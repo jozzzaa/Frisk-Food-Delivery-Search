@@ -34,14 +34,40 @@
       </div>
 
       <div class="address">
+
         <div class="address-top">
           <h5>ADDRESS</h5>
         </div>
+
         <div class="address-bottom">
           <p>Southbank, Vic</p>
           <i class="fa fa-sort-desc" aria-hidden="true"></i>
         </div>
+
+        <div class="address-popup">
+          <div class="address-esc">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </div>
+          <div class="white-arrow">
+            <img src="/images/icons/triangle-white.png" alt="" />
+          </div>
+          <div class="map-holder">
+            <div id="map"></div>
+          </div>
+          <div class="address-change">
+            <h5>Update delivery location</h5>
+            <div class="address-change-input">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <input type="text" placeholder="Enter delivery address" value="<%= params[:location] %>" id="address-input">
+            </div>
+            <div class="address-update-btn">
+              <p>Update Delivery Location</p>
+            </div>
+          </div>
+        </div>
+
       </div>
+
 
     </div>
 
@@ -67,14 +93,24 @@
 </div>
 
 
-<footer>
-
-</footer>
-
-
-
 <script>
 
+  // Results Call
   ajaxCall('<%= params[:search] %>', '<%= params[:location] %>')
+
+  // Address Handlers
+  $('.address-top').on('click', function() {
+
+    $('.address-popup').css('display', 'block');
+    displayLocationNav('<%= params[:location] %>');
+
+  });
+
+  $('.address-bottom').on('click', function() {
+
+    $('.address-popup').css('display', 'block');
+    displayLocationNav('<%= params[:location] %>');
+
+  });
 
 </script>

@@ -44,6 +44,10 @@ function getLocation() {
 
 }
 
+
+// HOMEPAGE SEARCH PROGRESSION
+
+
 function stageTwoSearch() {
   var addressBox = $('.address-search');
   var foodBox = $('.food-search');
@@ -66,3 +70,54 @@ function stageTwoSearch() {
         next();
       });
 }
+
+
+// MAP INITIALISER
+
+function initMap(coordinates) {
+  var myLatLng = coordinates
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+}
+
+
+function displayLocationNav(address) {
+
+  $.ajax({
+
+    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address,
+    method: 'get'
+
+  }).done(function(response) {
+
+    var geometricCoor = response.results[0].geometry.location;
+    initMap(geometricCoor);
+
+  })
+
+}
+
+// function locationSuggestions(input) {
+//
+//   $.ajax({
+//
+//     url: 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=' + input + '&types=address&key=AIzaSyCX98j2ahXOgcR13Cb2Pos1UQtVRBCzv7U',
+//     method: 'get'
+//
+//   }).done(function(response) {
+//
+//     var suggestions = response
+//     console.log(suggestions);
+//
+//   })
+//
+// }

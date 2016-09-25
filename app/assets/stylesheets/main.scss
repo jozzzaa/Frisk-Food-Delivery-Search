@@ -65,6 +65,16 @@ p, button, input {
 
 input:focus {outline:none;}
 
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+
 
 ////////////////////////// NAVIGATION BAR //////////////////////////
 
@@ -79,6 +89,7 @@ nav {
   // padding: 5px;
   // padding: 10px;
   border-bottom: 1px solid #bebebe;
+  z-index: 1000;
 
 
   .nav-wrapper {
@@ -132,12 +143,28 @@ nav {
         display: inline-block;
         font-weight: 500;
         font-size: 0.9em;
+        text-transform: uppercase;
       }
+
+      ::-webkit-input-placeholder {
+          text-transform: none;
+      }
+      :-moz-placeholder {
+          text-transform: none;
+      }
+      ::-moz-placeholder {
+          text-transform: none;
+      }
+      :-ms-input-placeholder {
+          text-transform: none;
+      }
+
 
     }
 
     .navigation-right {
       width: 50%;
+      position: relative;
 
       .address {
         height: 100%;
@@ -145,8 +172,22 @@ nav {
         padding: 10px 15px 10px 15px;
         display: inline-block;
         float: right;
-        cursor: pointer;
         transition: 0.3s;
+        position: relative;
+
+        .white-arrow {
+          position: absolute;
+          top: -19px;
+          left: 40px;
+          width: 23px;
+          height: 23px;
+          z-index: 5;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
 
         &:hover .address-bottom {
           opacity: 0.7;
@@ -159,6 +200,8 @@ nav {
         color: rgb(175, 175, 175);
         vertical-align: center;
         padding-top: 5px;
+        cursor: pointer;
+
       }
 
       p {
@@ -170,6 +213,8 @@ nav {
 
       .address-bottom {
         height: 50%;
+        cursor: pointer;
+
 
         * {
           display: inline-block;
@@ -182,6 +227,122 @@ nav {
           color: rgb(175, 175, 175);
           padding-left: 3px;
         }
+      }
+
+      .address-popup {
+        width: 350px;
+        // height: 250px;
+        background-color: white;
+        border: 1px solid rgb(190, 190, 190);
+        position: absolute;
+        top: 80px;
+        left: 0px;
+        border-radius: 5px;
+        display: none;
+        box-shadow: 0px 0px 30px rgb(164, 164, 164);
+
+
+        .address-esc {
+          position: relative;
+          text-align: center;
+          width: 100%;
+          z-index: 100;
+
+          i {
+            position: absolute;
+            background-color: $nav-accent;
+            top: -10px;
+            right: -10px;
+            color: white;
+            font-weight: 500;
+            padding: 0px 10px 0px 10px;
+            transform: rotate(15deg);
+            transition: 0.5s;
+            cursor: pointer;
+
+          }
+
+          i:hover {
+            background-color: rgba($nav-accent, 0.8);
+          }
+
+        }
+
+        .map-holder {
+          border-radius: 4px !important;
+          overflow: hidden;
+        }
+
+        #map {
+          width: 100%;
+          height: 100px;
+        }
+
+        .address-change {
+          padding: 20px 20px 30px 20px;
+        }
+
+        h5 {
+          font-weight: 500;
+          letter-spacing: 1px;
+          padding-top: 0px;
+          padding-bottom: 8px;
+        }
+
+        .address-change-input {
+          border-radius: 3px;
+          border: 1px solid rgb(190, 190, 190);
+          height: 45px;
+          padding: 0px 0px 0px 15px;
+        }
+
+        i {
+          line-height: 40px;
+          font-size: 1.1em;
+          color: $nav-accent;
+        }
+
+        input {
+          border: 0px;
+          height: 100%;
+          width: 90%;
+          background-color: transparent;
+          padding-left: 10px;
+          line-height: 100%;
+          vertical-align: center;
+          padding-bottom: 10px;
+        }
+
+        .address-update-btn {
+          height: 40px;
+          width: 100%;
+          background-color: $nav-accent;
+          text-align: center;
+          border-radius: 5px;
+          margin-top: 10px;
+          cursor: pointer;
+          transition: 0.5s;
+
+          p {
+            color: white;
+            line-height: 40px;
+            vertical-align: center;
+            font-size: 0.9em;
+          }
+
+          &:hover {
+            background-color: rgba($nav-accent, 0.8);
+          }
+
+        }
+
+        // .update-delivery-btn {
+        //   width: 100%;
+        //   height: 40px;
+        //   background-color: $nav-accent;
+        //   color: white;
+        // }
+
       }
 
       .account {
@@ -243,6 +404,11 @@ nav {
   }
 
 }
+
+
+
+////////////////////////// HERO BAR //////////////////////////
+
 
 .hero {
   height: 100vh;
@@ -418,6 +584,80 @@ nav {
     }
 
   }
+
+}
+
+
+
+////////////////////////// FOOTER //////////////////////////
+
+footer {
+  width: 100%;
+  height: 400px;
+  background-color: rgb(43, 44, 51);
+}
+
+
+
+
+////////////////////////// SHARE //////////////////////////
+
+.share-window {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(black, 0.5);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // display: none;
+
+  .share-content {
+    width: 600px;
+    // height: 70vh;
+    background-color: white;
+    padding: 80px;
+    text-align: center;
+    position: relative;
+
+
+  }
+
+  img {
+    width: 40%;
+    margin: 0 auto 50px auto;
+  }
+
+  p {
+    margin-bottom: 50px;
+  }
+
+  .esc-btn {
+    background-color: $nav-accent;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: rotate(-20deg);
+
+    i {
+      color: white;
+      font-size: 2em;
+      padding: 13px 10px 10px 10px;
+    }
+
+    &:hover {
+      background-color: #6b65ed;
+    }
+
+  }
+
 
 }
 
