@@ -31,7 +31,7 @@
         <h1>We need your help!</h1>
         <p>This tool was created out of one persons need. But, we need you to let us know if Frisk should remain. Frisk is an amazing tool to help you find the best places that are delivered, and is the ultimate curated source. By sharing with your friends, you'll be giving us a thumbs up.</p>
 
-        <div class="fb-like" data-href="https://www.facebook.com/StGeorgesBakehouse/?ref=bookmarks" data-width="200" data-layout="button_count" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
+        <!-- <div class="fb-like" data-href="https://www.facebook.com/StGeorgesBakehouse/?ref=bookmarks" data-width="200" data-layout="button_count" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div> -->
 
         <div class="esc-btn">
           <i class="fa fa-times" aria-hidden="true"></i>
@@ -43,9 +43,12 @@
 
     <script src="/javascript/search.js"></script>
 
-    <script>
+    <!-- <script>
+
+    // COMMENTED OUT TO KEEP CONSOLE CLEAN
 
       window.fbAsyncInit = function() {
+        FB._https = true;
         FB.init({
           appId      : '1776911149246256',
           xfbml      : true,
@@ -61,12 +64,12 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
 
-    </script>
+    </script> -->
 
     <script>
 
       $('.share-window').hide()
-      
+
     </script>
 
 

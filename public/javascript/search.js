@@ -100,7 +100,7 @@ $('.address-update-btn').on('click', function() {
 
   var newAddress = $('.address-change-input input').val()
   displayLocationNav(newAddress);
-  $('.results').empty();
+  $('.secondary-results').empty();
   ajaxCall('<%= params[:search] %>', newAddress)
 
 
@@ -113,9 +113,32 @@ var indexAddress = $('#location-input')[0];
 var navAddress = $('#address-input')[0];
 
 function locationSuggestions(inputElem) {
+
   var input = inputElem;
-  var autocomplete = new google.maps.places.Autocomplete(input);
+  if(input != undefined) {
+    var autocomplete = new google.maps.places.Autocomplete(input);
+  }
+
 }
 
 google.maps.event.addDomListener( window, 'load', locationSuggestions(indexAddress) );
 google.maps.event.addDomListener( window, 'load', locationSuggestions(navAddress) );
+
+
+// $(window).load(function(){
+//
+//   var homeFormWidth = $('.search-input-holder').width();
+//   // $('.pac-container').css('width', homeFormWidth);
+//   $('.pac-container').css('cssText', 'width: ' + (homeFormWidth + 3) + ' !important;');
+//
+//
+//   console.log('hey');
+//
+// });
+//
+// // $(window).on('resize', function(){
+// //
+// //   var homeFormWidth = $('.search-input-holder').width();
+// //   $('.pac-container').css('width', ( homeFormWidth + 3 ));
+// //
+// // });

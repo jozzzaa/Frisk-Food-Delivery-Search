@@ -29,30 +29,34 @@ function foodGenerator(object) {
 
   for (var i = 0; i < foods.length; i++) {
 
-    var foodHolder = $('<div>').addClass('food')
-    var foodImageHolder = $('<div>').addClass('food-image')
-    var foodContentHolder = $('<div>').addClass('food-content')
+    var foodHolder = $('<div>').addClass('food');
+    var foodImageHolder = $('<div>').addClass('food-image');
+    var foodContentHolder = $('<div>').addClass('food-content');
+    var contentLeft = $('<div>').addClass('food-left');
+    var contentRight = $('<div>').addClass('food-right');
 
     var foodName = $('<h3>').text(foods[i].name)
     var foodImage = $('<img>').attr('src', foods[i].image);
     var addressCompile = foods[i].address_street + ' ' + foods[i].address_suburb
-    var foodAddress = $('<p>').text(addressCompile)
+    // var foodAddress = $('<p>').text(addressCompile)
     var foodProvider = $('<p>').text(foods[i].provider)
-    var tags = $('<p>').text(foods[i].tags)
+    var tags = $('<p>').text( (foods[i].tags).join(' • ') );
 
     var imageCompile = foodImageHolder.append(foodImage)
+    var leftColCompile = contentLeft.append(tags)
+    var rightColCompile = contentRight.append(foodProvider)
+    
     var contentCompile = foodContentHolder
                             .append(foodName)
-                            .append(foodAddress)
-                            .append(foodProvider)
-                            .append(tags)
-
+                            // .append(foodAddress)
+                            .append(leftColCompile)
+                            .append(rightColCompile)
 
     var finalCompilation = foodHolder
                             .append(imageCompile)
                             .append(contentCompile)
 
-    $('.results').append(finalCompilation)
+    $('.secondary-results').append(finalCompilation)
 
   }
 
