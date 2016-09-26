@@ -411,6 +411,20 @@ nav {
 
 }
 
+#home-login {
+  height: 100%;
+  text-decoration: none;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+
+  &:hover p{
+    color: rgba($nav-accent, 0.7)
+  }
+
+}
+
 
 
 ////////////////////////// HERO BAR //////////////////////////
@@ -422,13 +436,22 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FCEDC6;
+  // background-color: #FCEDC6;
+  // background-color: #BAD4AA;
+  // background-color: #011627;
+  background: -webkit-radial-gradient(#183c59, #011627);
+  background: -o-radial-gradient(#183c59, #011627);
+  background: -moz-radial-gradient(#183c59, #011627);
+  background: radial-gradient(#183c59, #011627);
 
   .hero-content {
     text-align: center;
+    margin-top: -100px;
+    z-index: 2;
 
     h1 {
-      color: $nav-accent;
+      // color: $nav-accent;
+      color: white;
       font-weight: 700;
       font-size: 3.5em;
       display: inline;
@@ -593,6 +616,43 @@ nav {
 
 }
 
+.logo-display {
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  color: rgb(194, 194, 194);
+  z-index: 2;
+
+  .sl-holder {
+    width: 100px;
+    display: inline-block;
+    margin: 0px 10px 0px 10px;
+  }
+
+  img {
+    width: 100%;
+
+  }
+
+}
+
+.bg-pattern {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.1;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+
 ////////////////////////// ADDRESS AUTOCOMPLETE //////////////////////////
 
 .pac-container {
@@ -626,8 +686,73 @@ nav {
 
 footer {
   width: 100%;
-  height: 400px;
-  background-color: rgb(43, 44, 51);
+  background-color: #011627;
+  padding: 50px;
+
+  .footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .links {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #022d50;
+
+    ul {
+      text-decoration: none;
+      padding: 0px;
+
+    }
+
+    li {
+      display: inline-block;
+      font-family: $secondary-font;
+      text-transform: uppercase;
+      color: rgb(220, 220, 220);
+      padding: 0px 15px 0px 15px;
+    }
+
+  }
+
+  .copyright {
+    display: flex;
+    padding-top: 25px;
+
+    .footer-left {
+      width: 50%;
+
+      * {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      img {
+        height: 40px;
+        padding-left: 15px;
+      }
+
+      p {
+        line-height: 40px;
+        margin: 0px;
+        padding: 0px 0px 0px 15px;
+        color: white;
+
+      }
+
+    }
+
+    .footer-right {
+      width: 50%;
+
+      img {
+        height: 30px;
+        float: right;
+        padding: 0px 10px 0px 10px;
+      }
+    }
+
+  }
+
 }
 
 
