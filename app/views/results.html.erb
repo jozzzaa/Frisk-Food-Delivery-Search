@@ -40,7 +40,7 @@
         </div>
 
         <div class="address-bottom">
-          <p>Southbank, Vic</p>
+          <p><%= params[:location].split(',')[0] %></p>
           <i class="fa fa-sort-desc" aria-hidden="true"></i>
         </div>
 
@@ -76,9 +76,17 @@
 
 <div class="page">
 
-  <div class="banner">
-    <img src="/images/banners/Screen Shot 2016-09-24 at 6.44.52 PM.png" alt="" />
+  <a href="https://www.grilld.com.au/" target='_blank'>
+    <div class="banner">
+      <img src="/images/banners/banner-burgers.png" alt="" />
+    </div>
+  </a>
+
+  <div class="page-title">
+    <h3 id='results-title'>Frisk Results</h3>
+    <div class="underline"></div>
   </div>
+
 
   <div class=" results primary-result"></div>
 

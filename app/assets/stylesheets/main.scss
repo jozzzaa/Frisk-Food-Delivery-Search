@@ -214,6 +214,7 @@ nav {
       .address-bottom {
         height: 50%;
         cursor: pointer;
+        overflow: hidden;
 
 
         * {
@@ -226,6 +227,11 @@ nav {
           padding-bottom: 3px;
           color: rgb(175, 175, 175);
           padding-left: 3px;
+        }
+
+        p {
+          max-width: 200px;
+          overflow: hidden;
         }
       }
 
@@ -430,7 +436,7 @@ nav {
 
     h2 {
       color: #ee9513;
-      margin-top: -15px;
+      margin-top: -20px;
     }
 
   }
@@ -688,105 +694,6 @@ footer {
 
 }
 
-
-////////////////////////// INDEX PAGE //////////////////////////
-
-.page {
-  max-width: 1200px;
-  margin: 100px auto 70px auto;
-  background-color: white;
-  min-height: 100vh;
-}
-
-.secondary-results {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 80px;
-
-  .food {
-    width: 31%;
-    border: 1px solid #bebebe;
-    margin: 1%;
-    cursor: pointer;
-  }
-
-  .food:hover h3 {
-    color: rgba($nav-accent, 0.7);
-  }
-
-  .food-image {
-    // background-color: #2f2f2f;
-    // background: #5048ed;
-    position: relative;
-    width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: -moz-linear-gradient(-45deg,  #5048ed 0%, #2f2f2f 58%);
-    background: -webkit-linear-gradient(-45deg,  #5048ed 0%,#2f2f2f 58%);
-    background: linear-gradient(135deg,  #5048ed 0%,#2f2f2f 58%);
-
-  }
-
-  .food-background {
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background: -moz-linear-gradient(-45deg,  #5048ed 0%, #2f2f2f 58%);
-    background: -webkit-linear-gradient(-45deg,  #5048ed 0%,#2f2f2f 58%);
-    background: linear-gradient(135deg,  #5048ed 0%,#2f2f2f 58%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5048ed', endColorstr='#2f2f2f',GradientType=1 );
-    filter: blur(10px);
-    z-index: 0;
-  }
-
-  img {
-    height: 80%;
-    z-index: 1;
-  }
-
-  .food-content {
-    padding: 20px;
-  }
-
-  h3 {
-    font-weight: 500;
-    font-size: 1.2em;
-    color: $nav-accent;
-    width: 80%;
-    line-height: 1.2em;
-    transition: 0.5s;
-    padding-bottom: 10px;
-  }
-
-  p {
-    font-size: 0.9em;
-    color: #ababab;
-    margin: 0px;
-    line-height: 1.5em;
-  }
-
-  .food-left {
-    float: left;
-    width: 70%;
-    padding-bottom: 20px;
-  }
-
-  .food-right {
-    float: left;
-    width: 30%;
-    text-align: right;
-    padding-bottom: 20px;
-
-  }
-
-}
 
 
 ////////////////////////// AVG COLOR //////////////////////////

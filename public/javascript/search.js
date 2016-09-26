@@ -14,7 +14,8 @@ $('#current-location-btn').hover(function() {
 // Get Current Location
 
 $('#current-location-btn').on('click', function() {
-  getLocation()
+  getLocation();
+  $(this).css('color', '#5048ED');
 });
 
 // Search Button Handler

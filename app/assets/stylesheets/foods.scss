@@ -2,16 +2,143 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// .page {
-//   margin: 75px 0px 75px 0px;
-// }
+$primary-font: 'Hind', sans-serif;
+$secondary-font: 'Lato', sans-serif;
+
+// $nav-accent: #770055;
+// $nav-accent: #EDB431;
+$nav-accent: #5048ED;
+
+
+.page {
+  max-width: 1200px;
+  margin: 100px auto 70px auto;
+  background-color: white;
+  min-height: 100vh;
+
+  .page-title {
+    width: 100%;
+    margin: 90px 100px 0px 90px;
+    text-align: left;
+  }
+
+  #results-title {
+    color: #5048ED;
+    font-weight: 500;
+    font-size: 1.9em;
+    // border-bottom: 6px solid #ee9513;
+    // display: inline;
+    padding: 0;
+    line-height: 0.5em;
+  }
+
+  .underline {
+    height: 15px;
+    border-bottom: 6px solid #ee9513;
+    width: 230px;
+  }
+}
 
 .banner {
   width: 100%;
   cursor: pointer;
+  overflow: hidden;
+  padding: 0;
 
   img {
     width: 100%;
+    transition: 1s;
+    margin: 0;
   }
-  
+
+  // &:hover img {
+  //   transform: scale(1.02);
+  // }
+
+}
+
+.secondary-results {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 80px 80px 80px;
+
+  .food {
+    width: 31%;
+    border: 1px solid #bebebe;
+    margin: 1%;
+    cursor: pointer;
+  }
+
+  .food:hover h3 {
+    color: rgba(#ee9513, 1);
+  }
+
+  .food-image {
+    // background-color: #2f2f2f;
+    // background: #5048ed;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: -moz-linear-gradient(-45deg,  #5048ed 0%, #2f2f2f 58%);
+    background: -webkit-linear-gradient(-45deg,  #5048ed 0%,#2f2f2f 58%);
+    background: linear-gradient(135deg,  #5048ed 0%,#2f2f2f 58%);
+
+  }
+
+  .food-background {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-size: cover;
+    background-repeat: no-repeat !important;
+    filter: blur(10px);
+    z-index: 0;
+  }
+
+  img {
+    height: 80%;
+    z-index: 1;
+  }
+
+  .food-content {
+    padding: 20px;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 1.2em;
+    color: $nav-accent;
+    width: 80%;
+    line-height: 1.2em;
+    transition: 0.2s;
+    padding-bottom: 10px;
+  }
+
+  p {
+    font-size: 0.9em;
+    color: #ababab;
+    margin: 0px;
+    line-height: 1.5em;
+  }
+
+  .food-left {
+    float: left;
+    width: 70%;
+    padding-bottom: 20px;
+  }
+
+  .food-right {
+    float: left;
+    width: 30%;
+    text-align: right;
+    padding-bottom: 20px;
+
+  }
+
 }
