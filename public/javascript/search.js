@@ -142,3 +142,31 @@ google.maps.event.addDomListener( window, 'load', locationSuggestions(navAddress
 // //   $('.pac-container').css('width', ( homeFormWidth + 3 ));
 // //
 // // });
+
+
+// List style
+
+// function backgroundHandler(image, background) {
+//
+//   var sourceImage = image;
+//   var colorThief = new ColorThief();
+//   var color = colorThief.getColor(sourceImage);
+//   console.log(color);
+//   background.css( 'background-color', 'rgb(' + color + ')' )
+//
+// }
+//
+// window.onload = function() {
+//
+//   var listItems = document.getElementsByClassName('food');
+//
+//   for (var p = 0; p < listItems.length; p++) {
+//
+//     var listImage = listItems[p].getElementsByTagName('img')[0];
+//     var imageBackground = listItems[p].getElementsByClassName('food-image')[0]
+//
+//     backgroundHandler(listImage, imageBackground);
+//
+//   }
+//
+// }

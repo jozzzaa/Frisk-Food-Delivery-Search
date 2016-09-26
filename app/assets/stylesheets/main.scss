@@ -689,45 +689,6 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////////////////// INDEX PAGE //////////////////////////
 
 .page {
@@ -754,16 +715,40 @@ footer {
   }
 
   .food-image {
-    background-color: mistyrose;
+    // background-color: #2f2f2f;
+    // background: #5048ed;
+    position: relative;
     width: 100%;
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    background: -moz-linear-gradient(-45deg,  #5048ed 0%, #2f2f2f 58%);
+    background: -webkit-linear-gradient(-45deg,  #5048ed 0%,#2f2f2f 58%);
+    background: linear-gradient(135deg,  #5048ed 0%,#2f2f2f 58%);
+
+  }
+
+  .food-background {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: -moz-linear-gradient(-45deg,  #5048ed 0%, #2f2f2f 58%);
+    background: -webkit-linear-gradient(-45deg,  #5048ed 0%,#2f2f2f 58%);
+    background: linear-gradient(135deg,  #5048ed 0%,#2f2f2f 58%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5048ed', endColorstr='#2f2f2f',GradientType=1 );
+    filter: blur(10px);
+    z-index: 0;
   }
 
   img {
     height: 80%;
+    z-index: 1;
   }
 
   .food-content {
@@ -803,6 +788,24 @@ footer {
 
 }
 
+
+////////////////////////// AVG COLOR //////////////////////////
+
+.practice {
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  #display-color {
+    border: 1px solid black;
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+}
 
 
 ////////////////////////// TYPED CURSOR //////////////////////////

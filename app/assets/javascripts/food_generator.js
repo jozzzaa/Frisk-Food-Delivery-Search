@@ -21,7 +21,6 @@ function ajaxCall(search, location) {
 
 // Store in temp array then appeend to active/results when shown
 
-
 function foodGenerator(object) {
 
   var foods = object;
@@ -30,7 +29,13 @@ function foodGenerator(object) {
   for (var i = 0; i < foods.length; i++) {
 
     var foodHolder = $('<div>').addClass('food');
-    var foodImageHolder = $('<div>').addClass('food-image');
+    var foodImageHolder = $('<div>')
+          .addClass('food-image')
+    var foodBackground = $('<div>')
+          .addClass('food-background')
+          .css('background-image', 'url(' + foods[i].image + ')');
+
+
     var foodContentHolder = $('<div>').addClass('food-content');
     var contentLeft = $('<div>').addClass('food-left');
     var contentRight = $('<div>').addClass('food-right');
@@ -42,10 +47,12 @@ function foodGenerator(object) {
     var foodProvider = $('<p>').text(foods[i].provider)
     var tags = $('<p>').text( (foods[i].tags).join(' • ') );
 
-    var imageCompile = foodImageHolder.append(foodImage)
+    var imageCompile = foodImageHolder
+                          .append(foodImage)
+                          .append(foodBackground)
     var leftColCompile = contentLeft.append(tags)
     var rightColCompile = contentRight.append(foodProvider)
-    
+
     var contentCompile = foodContentHolder
                             .append(foodName)
                             // .append(foodAddress)
